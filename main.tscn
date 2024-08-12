@@ -3,3 +3,5 @@
 [node name="main" type="Node2D"]
 
 [node name="Window" type="Window" parent="."]
+disable_3d = true
+initial_position = 1
