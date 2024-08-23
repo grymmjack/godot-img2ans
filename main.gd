@@ -101,40 +101,22 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	sauce.fill_packet()
 
 	# 5 bytes
-	#var temp_char_array = sauce_record.id.split()
-	#for char in temp_char_array:
-		#file.store_8(char.unicode_at(0))
 	file.store_buffer(sauce_record.id.to_utf8_buffer())
 
 	# 2 bytes
-	#temp_char_array = sauce_record.version.split()
-	#for char in temp_char_array:
-		#file.store_8(char.unicode_at(0))
 	file.store_buffer(sauce_record.version.to_utf8_buffer())
 
 	# 35 bytes
-	#temp_char_array = sauce_record.title.split()
-	#for char in temp_char_array:
-		#file.store_8(char.unicode_at(0))
 	file.store_buffer(sauce_record.title.to_utf8_buffer())
 
 	# 20 bytes
-	#temp_char_array = sauce_record.author.split()
-	#for char in temp_char_array:
-		#file.store_8(char.unicode_at(0))
 	file.store_buffer(sauce_record.author.to_utf8_buffer())
 
 	# 20 bytes
-	#temp_char_array = sauce_record.group.split()
-	#for char in temp_char_array:
-		#file.store_8(char.unicode_at(0))
 	file.store_buffer(sauce_record.group.to_utf8_buffer())
 		
 
 	# 8 bytes
-	#temp_char_array = sauce_record.date.split()
-	#for char in temp_char_array:
-		#file.store_8(char.unicode_at(0))
 	file.store_buffer(sauce_record.date.to_utf8_buffer())
 
 	# 4 bytes
@@ -165,9 +147,6 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	file.store_8(sauce_record.t_flags)
 
 	# 22 bytes
-	#temp_char_array = sauce_record.t_info_s.split()
-	#for char in temp_char_array:
-		#file.store_8(char.unicode_at(0))
 	file.store_buffer(sauce_record.t_info_s.to_utf8_buffer())
 
 	file.close()
