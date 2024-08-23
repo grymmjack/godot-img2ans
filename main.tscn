@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf2myldlnrwq5"]
+[gd_scene load_steps=2 format=3 uid="uid://b8yn7bk3tl7gl"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_4fbv7"]
-[ext_resource type="Script" path="res://Window.gd" id="2_qsc2m"]
+[ext_resource type="Script" path="res://main.gd" id="1_nksdk"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_4fbv7")
+script = ExtResource("1_nksdk")
 
-[node name="win" type="Window" parent="."]
-disable_3d = true
-initial_position = 1
-script = ExtResource("2_qsc2m")
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(0, 36)
+size = Vector2i(800, 800)
+visible = true
+ok_button_text = "Open"
+mode_overrides_title = false
+file_mode = 0
+access = 2
+root_subfolder = "/home/grymmjack/git/img2ans/resources/images/"
 
-[connection signal="close_requested" from="win" to="win" method="_close"]
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
