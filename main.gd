@@ -89,7 +89,7 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	sauce_record.data_type = 1  # Character
 	sauce_record.file_type = 1  # ANSI
 	sauce_record.t_info1 = src_w  # Character width
-	sauce_record.t_info2 = round(src_h / 2)  # Number of lines, halved
+	sauce_record.t_info2 = src_h / 2  # Number of lines, halved
 	sauce_record.t_info3 = 0
 	sauce_record.t_info4 = 0
 	sauce_record.comments = 0
@@ -97,8 +97,8 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	sauce_record.t_info_s = "IBM VGA".rpad(22, " ")  # Font name
 
 	# Fill the sauce packet based on the filled sauce record
-	var sauce:Sauce = Sauce.new()
-	sauce.fill_packet()
+	#var sauce:Sauce = Sauce.new()
+	#sauce.fill_packet()
 
 	# 5 bytes
 	file.store_buffer(sauce_record.id.to_utf8_buffer())
@@ -114,7 +114,6 @@ func _on_file_dialog_file_selected(path: String) -> void:
 
 	# 20 bytes
 	file.store_buffer(sauce_record.group.to_utf8_buffer())
-		
 
 	# 8 bytes
 	file.store_buffer(sauce_record.date.to_utf8_buffer())
