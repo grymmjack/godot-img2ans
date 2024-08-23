@@ -2,18 +2,18 @@ extends Node
 
 class_name SAUCE_PACKET
 
-var comments = ""
-var data_type = ""
-var file_type = ""
-var character_width = 0
-var number_of_lines = 0
-var character_screen_height = 0
-var number_of_colors = 0
-var ice_colors = ""
-var font_name = ""
-var letter_spacing = ""
-var aspect_ratio = ""
-var pixel_width = 0
-var pixel_height = 0
-var pixel_depth = 0
-var sample_rate = 0
+var comments:int = 0
+var data_type:int = 1
+var file_type:int = 1
+var character_width:int = 0
+var number_of_lines:int = 0
+var character_screen_height:int = 0
+var number_of_colors:int = 0
+var ice_colors:int = 0
+var font_name:String = ""
+var letter_spacing:int = 0
+var aspect_ratio:int = 0
+var pixel_width:int = 0
+var pixel_height:int = 0
+var pixel_depth:int = 0
+var sample_rate:int = 0

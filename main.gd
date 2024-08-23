@@ -69,9 +69,8 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	var file = FileAccess.open(path + "-25-OPT.ans", FileAccess.WRITE)
 	
 	var char_array = ans.split()
-	for char in char_array:
-		file.store_8(char.unicode_at(0))
-	file.close()
+	for chara in char_array:
+		file.store_8(chara.unicode_at(0))
 
 	# Assuming SAUCE.InitPacket is called during _init() to initialize the packets
 	var slash = "/"
@@ -80,38 +79,97 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	var filename = path + "-25-OPT.ans"
 	var s = filename.substr(filename.rfind(slash) + 1, filename.length())
 	var sauce_record:SAUCE_RECORD = SAUCE_RECORD.new()
-	sauce_record.id = "SAUCE"
-	sauce_record.version = "00"
-	sauce_record.title = s.substr(0, min(s.length(), 35))  # Sauce title is max 35 chars
-	sauce_record.author = "grymmjack"
-	sauce_record.group = "MiSTiGRiS"
-	sauce_record.date = "20231231"  # YYMMDD format
+	sauce_record.id = "SAUCE".rpad(5, " ")
+	sauce_record.version = "00".rpad(2, " ")
+	sauce_record.title = s.substr(0, min(s.length(), 35)).rpad(35, " ")  # Sauce title is max 35 chars
+	sauce_record.author = "grymmjack".rpad(20, " ")
+	sauce_record.group = "MiSTiGRiS".rpad(20, " ")
+	sauce_record.date = "20231231".rpad(8, " ")  # YYMMDD format
 	sauce_record.file_size = file.get_length() - 1  # Size in bytes minus 1
 	sauce_record.data_type = 1  # Character
 	sauce_record.file_type = 1  # ANSI
 	sauce_record.t_info1 = src_w  # Character width
-	sauce_record.t_info2 = src_h / 2  # Number of lines, halved
+	sauce_record.t_info2 = round(src_h / 2)  # Number of lines, halved
 	sauce_record.t_info3 = 0
 	sauce_record.t_info4 = 0
 	sauce_record.comments = 0
 	sauce_record.t_flags = 3  # 8px iCE Colors
-	sauce_record.t_info_s = "IBM VGA"  # Font name
+	sauce_record.t_info_s = "IBM VGA".rpad(22, " ")  # Font name
 
 	# Fill the sauce packet based on the filled sauce record
 	var sauce:Sauce = Sauce.new()
 	sauce.fill_packet()
-	# Writing to the file
-	#var file_sauced = FileAccess.open(filename + "-25-OPT.ans", FileAccess.WRITE_READ)
-	file.seek(file.get_length() - 1)  # Move to the end of the file
-	var sauce_string:String = "SAUCE" + str(sauce_record.version) + str(sauce_record.title) + str(sauce_record.author) + \
-						str(sauce_record.group) + str(sauce_record.date) + str(sauce_record.file_size) + str(sauce_record.data_type) + \
-						str(sauce_record.file_type) + str(sauce_record.t_info1) + str(sauce_record.t_info2) + \
-						str(sauce_record.t_info3) + str(sauce_record.t_info4) + str(sauce_record.comments) + \
-						str(sauce_record.t_flags) + str(sauce_record.t_info_s)
-						
-	var sauce_char_array = sauce_string.split()
-	for char in sauce_char_array:
-		file.store_8(char.unicode_at(0))
+
+	# 5 bytes
+	#var temp_char_array = sauce_record.id.split()
+	#for char in temp_char_array:
+		#file.store_8(char.unicode_at(0))
+	file.store_buffer(sauce_record.id.to_utf8_buffer())
+
+	# 2 bytes
+	#temp_char_array = sauce_record.version.split()
+	#for char in temp_char_array:
+		#file.store_8(char.unicode_at(0))
+	file.store_buffer(sauce_record.version.to_utf8_buffer())
+
+	# 35 bytes
+	#temp_char_array = sauce_record.title.split()
+	#for char in temp_char_array:
+		#file.store_8(char.unicode_at(0))
+	file.store_buffer(sauce_record.title.to_utf8_buffer())
+
+	# 20 bytes
+	#temp_char_array = sauce_record.author.split()
+	#for char in temp_char_array:
+		#file.store_8(char.unicode_at(0))
+	file.store_buffer(sauce_record.author.to_utf8_buffer())
+
+	# 20 bytes
+	#temp_char_array = sauce_record.group.split()
+	#for char in temp_char_array:
+		#file.store_8(char.unicode_at(0))
+	file.store_buffer(sauce_record.group.to_utf8_buffer())
+		
+
+	# 8 bytes
+	#temp_char_array = sauce_record.date.split()
+	#for char in temp_char_array:
+		#file.store_8(char.unicode_at(0))
+	file.store_buffer(sauce_record.date.to_utf8_buffer())
+
+	# 4 bytes
+	file.store_32(sauce_record.file_size)
+
+	# 1 byte
+	file.store_8(sauce_record.data_type)
+
+	# 1 byte
+	file.store_8(sauce_record.file_type)
+
+	# 2 bytes
+	file.store_16(sauce_record.t_info1)
+
+	# 2 bytes
+	file.store_16(sauce_record.t_info2)
+
+	# 2 bytes
+	file.store_16(sauce_record.t_info3)
+		
+	# 2 bytes
+	file.store_16(sauce_record.t_info4)
+
+	# 1 byte
+	file.store_8(sauce_record.comments)
+
+	# 1 byte
+	file.store_8(sauce_record.t_flags)
+
+	# 22 bytes
+	#temp_char_array = sauce_record.t_info_s.split()
+	#for char in temp_char_array:
+		#file.store_8(char.unicode_at(0))
+	file.store_buffer(sauce_record.t_info_s.to_utf8_buffer())
+
 	file.close()
 	
 	print("ANSI art saved to: " + path + "-25-OPT.ans")
