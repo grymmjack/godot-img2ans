@@ -6,15 +6,19 @@
 script = ExtResource("1_nksdk")
 
 [node name="FileDialog" type="FileDialog" parent="."]
-title = "Open a File"
+disable_3d = true
+title = "IMG2ANS - CHOOSE IMAGE WITH EGA PALETTE - TO CONVERT TO ANSI"
 position = Vector2i(0, 36)
-size = Vector2i(800, 800)
+size = Vector2i(780, 800)
 visible = true
-ok_button_text = "Open"
+ok_button_text = "CONVERT TO ANSI"
+cancel_button_text = "CANCEL"
 mode_overrides_title = false
 file_mode = 0
 access = 2
-root_subfolder = "/home/"
+filters = PackedStringArray("*.png", "*.bmp", "*.jpg", "*.gif")
+use_native_dialog = true
 
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="canceled" from="FileDialog" to="." method="_on_file_dialog_canceled"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

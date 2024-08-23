@@ -150,4 +150,11 @@ func _on_file_dialog_file_selected(path: String) -> void:
 
 	file.close()
 	
-	print("ANSI art saved to: " + path + "-25-OPT.ans")
+	var msg = "ANSI art saved to: " + path + "-25-OPT.ans"
+	print(msg)
+	OS.alert(msg, 'IMG2ANS - Conversion Completed')
+	get_tree().quit()
+
+
+func _on_file_dialog_canceled():
+	get_tree().quit()
