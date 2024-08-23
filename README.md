@@ -64,16 +64,26 @@ Also since I know this will be helpful for BBS SysOps I have created a method wh
 ![IMG2ANS GUI](resources/images/progress5.png)
 
 ### Cross Platform Support:
-`IMG2ANS` is written using [QB64-PE](https://github.com/QB64-Phoenix-Edition/QB64pe) and as a result is 100% cross platform compatible with:
+`IMG2ANS` is was originally written using [QB64-PE](https://github.com/QB64-Phoenix-Edition/QB64pe) and was a result is 100% cross platform compatible with:
 
 - Linux
 - OSX
 - Windows
 
-### Input Image Formats Supported:
-`IMG2ANS` supports any [QB64-PE supported image formats](https://qb64phoenix.com/qb64wiki/index.php/LOADIMAGE) which includes:
+> The Godot version will also be cross platform and support the same OSes.
 
-- jpg, png, tga, bmp, psd, gif, pcx, svg, qoi
+### Input Image Formats Supported:
+`IMG2ANS` supports any [Godot supported image formats](https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_images.html#supported-image-formats) which includes:
+- bmp
+- dds
+- ktx
+- exr
+- hdr
+- jpg
+- png
+- tga
+- svg
+- webp
 
 ### Output Image Formats Supported:
 `IMG2ANS` will save text files according to the following output types (all of which will embed the font and width and height in the sauce record in addition to the standard sauce stuff like group, author, comments, etc. if it is enabled):
@@ -82,7 +92,7 @@ Also since I know this will be helpful for BBS SysOps I have created a method wh
 
 ### Until the Godot version GUI is done...
 
-See the [README](https://github.com/grymmjack/img2ans) of the img2ans QB64PE project.
+See the [README](https://github.com/grymmjack/img2ans) of the img2ans QB64PE project. You can use this now, but it's got no GUI. CLI only.
 
 ## USAGE FOR GUI
 - Run the program
