@@ -14,7 +14,7 @@ ok_button_text = "Open"
 mode_overrides_title = false
 file_mode = 0
 access = 2
-root_subfolder = "/home"
+root_subfolder = "/home/"
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
