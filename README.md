@@ -1,5 +1,5 @@
 # godot version of img2ans
-## TL;DR: https://www.youtube.com/watch?v=sJiqoQ2E0M8 (QB64PE version - Godot coming soon)
+## TL;DR: [YouTube video](https://www.youtube.com/watch?v=sJiqoQ2E0M8) of QB64PE version - Godot version with GUI coming soon
 
 After struggling a bit with the [QB64PE](https://www.qb64phoenix.com/) GUI side of my project [img2ans](https://github.com/grymmjack/img2ans), I have decided to port the entire thing into godot to leverage the GUI tools available.
 
