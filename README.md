@@ -1,5 +1,5 @@
 # godot version of img2ans
-## TL;DR: https://www.youtube.com/watch?v=sJiqoQ2E0M8
+## TL;DR: https://www.youtube.com/watch?v=sJiqoQ2E0M8 (QB64PE version - Godot coming soon)
 
 After struggling a bit with the [QB64PE](https://www.qb64phoenix.com/) GUI side of my project [img2ans](https://github.com/grymmjack/img2ans), I have decided to port the entire thing into godot to leverage the GUI tools available.
 
@@ -80,23 +80,9 @@ Also since I know this will be helpful for BBS SysOps I have created a method wh
 - 16 color ANSI (8px and 16px fonts)
 - 24 Bit ANSI (8px and 16px fonts)
 
-### Until the GUI is done...
+### Until the Godot version GUI is done...
 
-You can use each one of these separately:
-
-- [IMG2ANS-25.BAS](archived/v0.1.1-tools/IMG2ANS-25.BAS)
-- [IMG2ANS-50.BAS](archived/v0.1.1-tools/IMG2ANS-50.BAS)
-- [IMG2ANS-25-NOICE.BAS](archived/v0.1.1-tools/IMG2ANS-25-NOICE.BAS)
-- [IMG2ANS-25-RGB.BAS](archived/v0.1.1-tools/IMG2ANS-25-RGB.BAS)
-- [IMG2ANS-50-RGB.BAS](archived/v0.1.1-tools/IMG2ANS-50-RGB.BAS)
-- [IMG2ANS-25-OPT.BAS](archived/v0.1.1-tools/IMG2ANS-25-OPT.BAS)
-- [IMG2ANS-50-OPT.BAS](archived/v0.1.1-tools/IMG2ANS-50-OPT.BAS)
-- [IMG2ANS-25-NOICE-OPT.BAS](IMG2ANS-25-NOICE-OPT.BAS)
-- [IMG2ANS-25-RGB-OPT.BAS](archived/v0.1.1-tools/IMG2ANS-25-RGB-OPT.BAS)
-- [IMG2ANS-50-RGB-OPT.BAS](archived/v0.1.1-tools/IMG2ANS-50-RGB-OPT.BAS)
-
-# USAGE FOR SEPARATE PROGRAMS
-For each program, just compile it and run it. I will create a release that will have native binaries for Linux, OSX, and Windows soon. Until then, just get QB64-PE, install it, build it, etc.
+See the [README](https://github.com/grymmjack/img2ans) of the img2ans QB64PE project.
 
 ## USAGE FOR GUI
 - Run the program
