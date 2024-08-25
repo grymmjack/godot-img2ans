@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbx4f44cbmc2p"]
+
+[ext_resource type="Material" uid="uid://yxrwo0hrmgs5" path="res://posterize_material.tres" id="1_lrplh"]
+[ext_resource type="Texture2D" uid="uid://6ik50nbukmsb" path="res://tests-external/macaw.png" id="2_bh11c"]
+[ext_resource type="Script" path="res://posterized_image.gd" id="3_4kvmu"]
+[ext_resource type="Material" uid="uid://cq0k7wmnt53mm" path="res://color_reduce_dither_material.tres" id="4_5lu2u"]
+[ext_resource type="Material" uid="uid://6525ifabxdw8" path="res://pixelated_256.tres" id="5_qd621"]
+[ext_resource type="Script" path="res://color_reduced_dithered.gd" id="5_sam17"]
+[ext_resource type="Material" uid="uid://cgg1totp645tc" path="res://8x8dither.tres" id="6_mkxit"]
+[ext_resource type="Material" uid="uid://ccxbfxcfyvuh6" path="res://brightness_contrast_saturation.tres" id="7_rjhgq"]
+
+[node name="Main" type="Node2D"]
+
+[node name="PosterizedSubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PosterizedSubViewport" type="SubViewport" parent="PosterizedSubViewportContainer"]
+unique_name_in_owner = true
+disable_3d = true
+size = Vector2i(480, 640)
+
+[node name="PosterizedSprite" type="Sprite2D" parent="PosterizedSubViewportContainer/PosterizedSubViewport"]
+material = ExtResource("1_lrplh")
+scale = Vector2(0.687879, 0.687879)
+texture = ExtResource("2_bh11c")
+centered = false
+script = ExtResource("3_4kvmu")
+
+[node name="ColorReducedSubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorReducedSubViewport" type="SubViewport" parent="ColorReducedSubViewportContainer"]
+disable_3d = true
+size = Vector2i(480, 640)
+
+[node name="ColorReducedDitheredSprite" type="Sprite2D" parent="ColorReducedSubViewportContainer/ColorReducedSubViewport"]
+material = ExtResource("4_5lu2u")
+scale = Vector2(0.687879, 0.687879)
+texture = ExtResource("2_bh11c")
+centered = false
+script = ExtResource("5_sam17")
+
+[node name="Pixelated256SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pixelated256SubViewport" type="SubViewport" parent="Pixelated256SubViewportContainer"]
+
+[node name="Pixelated256Sprite" type="Sprite2D" parent="Pixelated256SubViewportContainer/Pixelated256SubViewport"]
+material = ExtResource("5_qd621")
+position = Vector2(1204, 320)
+scale = Vector2(0.687879, 0.687879)
+texture = ExtResource("2_bh11c")
+
+[node name="RetroPostProcessing" type="Sprite2D" parent="."]
+material = ExtResource("6_mkxit")
+position = Vector2(1697, 320)
+scale = Vector2(0.687879, 0.687879)
+texture = ExtResource("2_bh11c")
+
+[node name="BrightnessContrastSaturation" type="Sprite2D" parent="."]
+material = ExtResource("7_rjhgq")
+position = Vector2(2192, 320)
+scale = Vector2(0.687879, 0.687879)
+texture = ExtResource("2_bh11c")

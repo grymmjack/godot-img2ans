@@ -1,0 +1,4 @@
+[gd_resource type="ViewportTexture" format=3 uid="uid://lw4mnrik1onm"]
+
+[resource]
+viewport_path = NodePath("Pixelated256SubViewportContainer/Pixelated256SubViewport")

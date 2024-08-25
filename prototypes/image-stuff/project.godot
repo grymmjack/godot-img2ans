@@ -10,17 +10,17 @@ config_version=5
 
 [application]
 
-config/name="img2ans-godot"
+config/name="image-stuff"
 run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=1000
+window/size/viewport_width=2560
+window/size/viewport_height=1440
 
 [rendering]
 
-textures/vram_compression/import_s3tc_bptc=true
-textures/vram_compression/import_etc2_astc=true
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
