@@ -1,4 +1,0 @@
-[gd_resource type="ViewportTexture" format=3 uid="uid://bv0cln4keuhjs"]
-
-[resource]
-viewport_path = NodePath("ColorReducedSubViewportContainer/ColorReducedSubViewport")

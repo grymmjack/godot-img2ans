@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bwiddjg0i8bph"]
-
-[ext_resource type="Shader" path="res://adapt_to_palette.gdshader" id="1_resi5"]
-[ext_resource type="Texture2D" uid="uid://dj7itrta76io4" path="res://palettes/color-graphics-adapter-1x.png" id="2_pk1wo"]
-
-[resource]
-shader = ExtResource("1_resi5")
-shader_parameter/palette = ExtResource("2_pk1wo")

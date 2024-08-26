@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cq0k7wmnt53mm"]
-
-[ext_resource type="Shader" path="res://color_reduce_dither.gdshader" id="1_jy06e"]
-
-[resource]
-shader = ExtResource("1_jy06e")
-shader_parameter/colors = 0.53
-shader_parameter/dither = 0.284

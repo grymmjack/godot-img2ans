@@ -1,67 +1,171 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbx4f44cbmc2p"]
+[gd_scene load_steps=11 format=3 uid="uid://ncehrk3rv2be"]
 
-[ext_resource type="Material" uid="uid://yxrwo0hrmgs5" path="res://posterize_material.tres" id="1_lrplh"]
-[ext_resource type="Texture2D" uid="uid://6ik50nbukmsb" path="res://tests-external/macaw.png" id="2_bh11c"]
-[ext_resource type="Script" path="res://posterized_image.gd" id="3_4kvmu"]
-[ext_resource type="Material" uid="uid://cq0k7wmnt53mm" path="res://color_reduce_dither_material.tres" id="4_5lu2u"]
-[ext_resource type="Material" uid="uid://6525ifabxdw8" path="res://pixelated_256.tres" id="5_qd621"]
-[ext_resource type="Script" path="res://color_reduced_dithered.gd" id="5_sam17"]
-[ext_resource type="Material" uid="uid://cgg1totp645tc" path="res://8x8dither.tres" id="6_mkxit"]
-[ext_resource type="Material" uid="uid://ccxbfxcfyvuh6" path="res://brightness_contrast_saturation.tres" id="7_rjhgq"]
+[ext_resource type="Texture2D" uid="uid://ckgope7pull20" path="res://images/daemon.png" id="1_on4rl"]
+[ext_resource type="Material" uid="uid://ccxbfxcfyvuh6" path="res://shaders/materials/brightness_contrast_saturation_material.tres" id="2_joenb"]
+[ext_resource type="Texture2D" uid="uid://cm8nw07ayypq" path="res://shaders/viewport_textures/original_viewport_texture.tres" id="3_8qqyw"]
+[ext_resource type="Material" uid="uid://yxrwo0hrmgs5" path="res://shaders/materials/posterize_material.tres" id="4_ww6ys"]
+[ext_resource type="Texture2D" uid="uid://dehwfuabpb0a7" path="res://shaders/viewport_textures/brightness_contrast_saturation_viewport_texture.tres" id="5_h5w6l"]
+[ext_resource type="Texture2D" uid="uid://da88ewhbuucww" path="res://shaders/viewport_textures/posterize_image_viewport_texture.tres" id="6_r01kv"]
+[ext_resource type="Material" uid="uid://bwiddjg0i8bph" path="res://shaders/materials/adapt_to_palette_material.tres" id="7_qc3m8"]
+[ext_resource type="Material" uid="uid://cgg1totp645tc" path="res://shaders/materials/8x8dither_material.tres" id="8_nigti"]
+[ext_resource type="Texture2D" uid="uid://0s23bx68vvaa" path="res://shaders/viewport_textures/adapt_to_palette_viewport_texture.tres" id="9_hrhyv"]
+[ext_resource type="Texture2D" uid="uid://ds6f8cn5qldjt" path="res://shaders/viewport_textures/retro_post_processing_viewport_texture.tres" id="10_0n0tu"]
 
 [node name="Main" type="Node2D"]
 
+[node name="OriginalSubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 480.0
+offset_bottom = 640.0
+
+[node name="OriginalSubViewport" type="SubViewport" parent="OriginalSubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(480, 640)
+render_target_update_mode = 4
+
+[node name="OriginalSprite2D" type="Sprite2D" parent="OriginalSubViewportContainer/OriginalSubViewport"]
+texture = ExtResource("1_on4rl")
+centered = false
+region_rect = Rect2(16, 0, 16, 0)
+
+[node name="BrightnessContrastSaturationSubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 576.0
+offset_right = 1056.0
+offset_bottom = 640.0
+
+[node name="BrightnessContrastSaturationSubViewport" type="SubViewport" parent="BrightnessContrastSaturationSubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(480, 640)
+render_target_update_mode = 4
+
+[node name="BrightnessContrastSaturationSprite2D" type="Sprite2D" parent="BrightnessContrastSaturationSubViewportContainer/BrightnessContrastSaturationSubViewport"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("2_joenb")
+texture = ExtResource("3_8qqyw")
+centered = false
+
 [node name="PosterizedSubViewportContainer" type="SubViewportContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 576.0
+offset_top = 704.0
+offset_right = 1056.0
+offset_bottom = 1344.0
 
 [node name="PosterizedSubViewport" type="SubViewport" parent="PosterizedSubViewportContainer"]
-unique_name_in_owner = true
 disable_3d = true
+handle_input_locally = false
 size = Vector2i(480, 640)
+render_target_update_mode = 4
 
-[node name="PosterizedSprite" type="Sprite2D" parent="PosterizedSubViewportContainer/PosterizedSubViewport"]
-material = ExtResource("1_lrplh")
-scale = Vector2(0.687879, 0.687879)
-texture = ExtResource("2_bh11c")
+[node name="PosterizedSprite2D" type="Sprite2D" parent="PosterizedSubViewportContainer/PosterizedSubViewport"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("4_ww6ys")
+texture = ExtResource("5_h5w6l")
 centered = false
-script = ExtResource("3_4kvmu")
 
-[node name="ColorReducedSubViewportContainer" type="SubViewportContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="AdaptToPaletteSubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 1152.0
+offset_right = 1664.0
+offset_bottom = 640.0
 
-[node name="ColorReducedSubViewport" type="SubViewport" parent="ColorReducedSubViewportContainer"]
+[node name="AdaptToPaletteSubViewport" type="SubViewport" parent="AdaptToPaletteSubViewportContainer"]
 disable_3d = true
+handle_input_locally = false
 size = Vector2i(480, 640)
+render_target_update_mode = 4
 
-[node name="ColorReducedDitheredSprite" type="Sprite2D" parent="ColorReducedSubViewportContainer/ColorReducedSubViewport"]
-material = ExtResource("4_5lu2u")
-scale = Vector2(0.687879, 0.687879)
-texture = ExtResource("2_bh11c")
+[node name="AdaptToPaletteSprite2D" type="Sprite2D" parent="AdaptToPaletteSubViewportContainer/AdaptToPaletteSubViewport"]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("6_r01kv")
 centered = false
-script = ExtResource("5_sam17")
 
-[node name="Pixelated256SubViewportContainer" type="SubViewportContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="PaletteLoaderColorRect" type="ColorRect" parent="AdaptToPaletteSubViewportContainer/AdaptToPaletteSubViewport"]
+material = ExtResource("7_qc3m8")
+offset_right = 480.0
+offset_bottom = 640.0
 
-[node name="Pixelated256SubViewport" type="SubViewport" parent="Pixelated256SubViewportContainer"]
+[node name="RetroPostProcessingSubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 1152.0
+offset_top = 704.0
+offset_right = 1664.0
+offset_bottom = 1344.0
 
-[node name="Pixelated256Sprite" type="Sprite2D" parent="Pixelated256SubViewportContainer/Pixelated256SubViewport"]
-material = ExtResource("5_qd621")
-position = Vector2(1204, 320)
-scale = Vector2(0.687879, 0.687879)
-texture = ExtResource("2_bh11c")
+[node name="RetroPostProcessingSubViewport" type="SubViewport" parent="RetroPostProcessingSubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(480, 640)
+render_target_update_mode = 4
 
-[node name="RetroPostProcessing" type="Sprite2D" parent="."]
-material = ExtResource("6_mkxit")
-position = Vector2(1697, 320)
-scale = Vector2(0.687879, 0.687879)
-texture = ExtResource("2_bh11c")
+[node name="RetroPostProcessingSprite2D" type="Sprite2D" parent="RetroPostProcessingSubViewportContainer/RetroPostProcessingSubViewport"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("8_nigti")
+texture = ExtResource("9_hrhyv")
+centered = false
 
-[node name="BrightnessContrastSaturation" type="Sprite2D" parent="."]
-material = ExtResource("7_rjhgq")
-position = Vector2(2192, 320)
-scale = Vector2(0.687879, 0.687879)
-texture = ExtResource("2_bh11c")
+[node name="ResultSubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 1792.0
+offset_top = 320.0
+offset_right = 2272.0
+offset_bottom = 960.0
+
+[node name="ResultSubViewport" type="SubViewport" parent="ResultSubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(480, 640)
+render_target_update_mode = 4
+
+[node name="ResultSprite2D" type="Sprite2D" parent="ResultSubViewportContainer/ResultSubViewport"]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("10_0n0tu")
+centered = false
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Original" type="Label" parent="Labels"]
+offset_left = 8.0
+offset_right = 85.0
+offset_bottom = 23.0
+text = "ORIGINAL
+"
+
+[node name="BrightnessContrastSaturation" type="Label" parent="Labels"]
+offset_left = 584.0
+offset_right = 894.0
+offset_bottom = 23.0
+text = "BRIGHTNESS / CONTRAST / SATURATION
+"
+
+[node name="Posterized" type="Label" parent="Labels"]
+offset_left = 584.0
+offset_top = 704.0
+offset_right = 894.0
+offset_bottom = 727.0
+text = "POSTERIZE
+"
+
+[node name="Retro" type="Label" parent="Labels"]
+offset_left = 1160.0
+offset_top = 704.0
+offset_right = 1470.0
+offset_bottom = 727.0
+text = "RETRO"
+
+[node name="AdaptToPalette" type="Label" parent="Labels"]
+offset_left = 1160.0
+offset_right = 1470.0
+offset_bottom = 23.0
+text = "ADAPT TO PALETTE
+"
+
+[node name="Result" type="Label" parent="Labels"]
+offset_left = 1800.0
+offset_top = 320.0
+offset_right = 2110.0
+offset_bottom = 343.0
+text = "RESULT
+"

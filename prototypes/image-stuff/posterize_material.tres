@@ -1,7 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://yxrwo0hrmgs5"]
-
-[ext_resource type="Shader" path="res://posterize_shader.gdshader" id="1_agjth"]
-
-[resource]
-shader = ExtResource("1_agjth")
-shader_parameter/levels = 2.421

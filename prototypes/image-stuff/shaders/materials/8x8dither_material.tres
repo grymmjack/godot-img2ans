@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cgg1totp645tc"]
+
+[ext_resource type="Shader" path="res://shaders/8x8dither.gdshader" id="1_4ht1h"]
+
+[resource]
+shader = ExtResource("1_4ht1h")
+shader_parameter/levels = 32
+shader_parameter/threshold = 0.0
+shader_parameter/colors = 32
+shader_parameter/pixelate = 6
