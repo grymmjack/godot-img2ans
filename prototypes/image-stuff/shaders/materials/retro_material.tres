@@ -1,12 +1,12 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cgg1totp645tc"]
 
 [ext_resource type="Shader" path="res://shaders/retro.gdshader" id="1_saaca"]
-[ext_resource type="Texture2D" uid="uid://d4oyeaei51q0" path="res://bayer16tile2.png" id="2_1lvb0"]
+[ext_resource type="Texture2D" uid="uid://isvfnct6bh5n" path="res://dither_matrix.png" id="2_xi75y"]
 
 [resource]
 shader = ExtResource("1_saaca")
 shader_parameter/levels = 3
-shader_parameter/threshold = 0.15
+shader_parameter/threshold = 0.0
 shader_parameter/colors = 4
 shader_parameter/pixelate = 4.0
-shader_parameter/dither_texture = ExtResource("2_1lvb0")
+shader_parameter/dither_texture = ExtResource("2_xi75y")
