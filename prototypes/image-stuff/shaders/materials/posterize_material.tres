@@ -4,4 +4,4 @@
 
 [resource]
 shader = ExtResource("1_1spdg")
-shader_parameter/levels = 3.471
+shader_parameter/levels = 5.0

@@ -4,16 +4,16 @@
 shader_type canvas_item;
 render_mode blend_mix,unshaded;
 
-uniform float brightness : hint_range(-1, 1) = 0;
-uniform float contrast : hint_range(0, 5) = 1.0;
+uniform float brightness : hint_range(-1, 1) = 0.1;
+uniform float contrast : hint_range(0, 5) = 1.65;
 uniform float saturation : hint_range(0, 5) = 1.0;
 
-uniform float redVal : hint_range(0, 1) = 1.0;
-uniform float greenVal : hint_range(0, 1) = 1.0;
-uniform float blueVal : hint_range(0, 1) = 1.0;
+uniform float redVal : hint_range(0, 8) = 1.0;
+uniform float greenVal : hint_range(0, 8) = 1.0;
+uniform float blueVal : hint_range(0, 8) = 1.0;
 
-uniform vec4 tint_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-uniform float tint_effect_factor : hint_range(0, 1) = 0.0;
+uniform vec4 tint_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform float tint_effect_factor : hint_range(0, 1.0) = 0.1;
 //---------------------------------------------
 //CONTRAST
 //---------------------------------------------

@@ -4,11 +4,11 @@
 
 [resource]
 shader = ExtResource("1_cy73n")
-shader_parameter/brightness = 0.0590001
-shader_parameter/contrast = 2.365
-shader_parameter/saturation = 1.573
+shader_parameter/brightness = 0.1
+shader_parameter/contrast = 1.65
+shader_parameter/saturation = 1.0
 shader_parameter/redVal = 1.0
 shader_parameter/greenVal = 1.0
 shader_parameter/blueVal = 1.0
-shader_parameter/tint_color = Color(0.333333, 1, 0.333333, 1)
-shader_parameter/tint_effect_factor = 0.0
+shader_parameter/tint_color = Color(0, 0, 0, 1)
+shader_parameter/tint_effect_factor = 0.1

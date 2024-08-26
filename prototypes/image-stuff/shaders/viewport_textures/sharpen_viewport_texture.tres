@@ -1,0 +1,4 @@
+[gd_resource type="ViewportTexture" format=3 uid="uid://dtlte1om8ovhe"]
+
+[resource]
+viewport_path = NodePath("SharpenSubViewportContainer/SharpenSubViewport")

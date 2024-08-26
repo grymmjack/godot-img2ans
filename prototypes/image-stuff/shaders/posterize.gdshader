@@ -3,7 +3,7 @@
 
 shader_type canvas_item;
 
-uniform float levels : hint_range(1.0, 32.0);
+uniform float levels : hint_range(1.0, 32.0) = 5.0;
 
 void fragment() {
     vec4 color = texture(TEXTURE, UV);

@@ -1,16 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://ncehrk3rv2be"]
+[gd_scene load_steps=12 format=3 uid="uid://cewft8tda38im"]
 
-[ext_resource type="Texture2D" uid="uid://ckgope7pull20" path="res://images/daemon.png" id="1_on4rl"]
-[ext_resource type="Material" uid="uid://ccxbfxcfyvuh6" path="res://shaders/materials/brightness_contrast_saturation_material.tres" id="2_joenb"]
-[ext_resource type="Material" uid="uid://dmm80sp24knd2" path="res://shaders/materials/sharpen_material.tres" id="2_q0oj6"]
-[ext_resource type="Texture2D" uid="uid://cm8nw07ayypq" path="res://shaders/viewport_textures/original_viewport_texture.tres" id="3_8qqyw"]
-[ext_resource type="Material" uid="uid://yxrwo0hrmgs5" path="res://shaders/materials/posterize_material.tres" id="4_ww6ys"]
-[ext_resource type="Texture2D" uid="uid://dehwfuabpb0a7" path="res://shaders/viewport_textures/brightness_contrast_saturation_viewport_texture.tres" id="5_h5w6l"]
-[ext_resource type="Texture2D" uid="uid://da88ewhbuucww" path="res://shaders/viewport_textures/posterize_viewport_texture.tres" id="6_r01kv"]
-[ext_resource type="Material" uid="uid://bwiddjg0i8bph" path="res://shaders/materials/adapt_to_palette_material.tres" id="7_qc3m8"]
-[ext_resource type="Material" uid="uid://cgg1totp645tc" path="res://shaders/materials/retro_material.tres" id="8_nigti"]
-[ext_resource type="Texture2D" uid="uid://0s23bx68vvaa" path="res://shaders/viewport_textures/adapt_to_palette_viewport_texture.tres" id="9_hrhyv"]
-[ext_resource type="Texture2D" uid="uid://ds6f8cn5qldjt" path="res://shaders/viewport_textures/retro_viewport_texture.tres" id="10_0n0tu"]
+[ext_resource type="Texture2D" uid="uid://dvyn2fwivv8lb" path="res://images/tony_nec.png" id="1_l3tgc"]
+[ext_resource type="Material" uid="uid://dmm80sp24knd2" path="res://shaders/materials/sharpen_material.tres" id="2_nnt27"]
+[ext_resource type="Texture2D" uid="uid://cm8nw07ayypq" path="res://shaders/viewport_textures/original_viewport_texture.tres" id="3_8wbmp"]
+[ext_resource type="Material" uid="uid://ccxbfxcfyvuh6" path="res://shaders/materials/brightness_contrast_saturation_material.tres" id="4_blawa"]
+[ext_resource type="Material" uid="uid://yxrwo0hrmgs5" path="res://shaders/materials/posterize_material.tres" id="5_uqfxf"]
+[ext_resource type="Texture2D" uid="uid://dehwfuabpb0a7" path="res://shaders/viewport_textures/brightness_contrast_saturation_viewport_texture.tres" id="6_rh8vt"]
+[ext_resource type="Material" uid="uid://cgg1totp645tc" path="res://shaders/materials/retro_material.tres" id="7_30drq"]
+[ext_resource type="Texture2D" uid="uid://da88ewhbuucww" path="res://shaders/viewport_textures/posterize_viewport_texture.tres" id="8_8ejlg"]
+[ext_resource type="Texture2D" uid="uid://ds6f8cn5qldjt" path="res://shaders/viewport_textures/retro_viewport_texture.tres" id="9_t7qau"]
+[ext_resource type="Material" uid="uid://bwiddjg0i8bph" path="res://shaders/materials/adapt_to_palette_material.tres" id="10_gpa0o"]
+[ext_resource type="Texture2D" uid="uid://0s23bx68vvaa" path="res://shaders/viewport_textures/adapt_to_palette_viewport_texture.tres" id="11_k5j45"]
 
 [node name="Main" type="Node2D"]
 
@@ -25,7 +25,7 @@ size = Vector2i(480, 640)
 render_target_update_mode = 4
 
 [node name="OriginalSprite2D" type="Sprite2D" parent="OriginalSubViewportContainer/OriginalSubViewport"]
-texture = ExtResource("1_on4rl")
+texture = ExtResource("1_l3tgc")
 centered = false
 region_rect = Rect2(16, 0, 16, 0)
 
@@ -42,8 +42,8 @@ size = Vector2i(480, 640)
 render_target_update_mode = 0
 
 [node name="SharpenSprite2D" type="Sprite2D" parent="SharpenSubViewportContainer/SharpenSubViewport"]
-material = ExtResource("2_q0oj6")
-texture = ExtResource("3_8qqyw")
+material = ExtResource("2_nnt27")
+texture = ExtResource("3_8wbmp")
 centered = false
 
 [node name="BrightnessContrastSaturationSubViewportContainer" type="SubViewportContainer" parent="."]
@@ -60,8 +60,8 @@ render_target_update_mode = 4
 [node name="BrightnessContrastSaturationSprite2D" type="Sprite2D" parent="BrightnessContrastSaturationSubViewportContainer/BrightnessContrastSaturationSubViewport"]
 texture_filter = 1
 texture_repeat = 1
-material = ExtResource("2_joenb")
-texture = ExtResource("3_8qqyw")
+material = ExtResource("4_blawa")
+texture = ExtResource("3_8wbmp")
 centered = false
 
 [node name="PosterizedSubViewportContainer" type="SubViewportContainer" parent="."]
@@ -79,8 +79,8 @@ render_target_update_mode = 4
 [node name="PosterizedSprite2D" type="Sprite2D" parent="PosterizedSubViewportContainer/PosterizedSubViewport"]
 texture_filter = 1
 texture_repeat = 1
-material = ExtResource("4_ww6ys")
-texture = ExtResource("5_h5w6l")
+material = ExtResource("5_uqfxf")
+texture = ExtResource("6_rh8vt")
 centered = false
 
 [node name="RetroPostProcessingSubViewportContainer" type="SubViewportContainer" parent="."]
@@ -97,8 +97,8 @@ render_target_update_mode = 4
 [node name="RetroPostProcessingSprite2D" type="Sprite2D" parent="RetroPostProcessingSubViewportContainer/RetroPostProcessingSubViewport"]
 texture_filter = 1
 texture_repeat = 1
-material = ExtResource("8_nigti")
-texture = ExtResource("6_r01kv")
+material = ExtResource("7_30drq")
+texture = ExtResource("8_8ejlg")
 centered = false
 
 [node name="AdaptToPaletteSubViewportContainer" type="SubViewportContainer" parent="."]
@@ -116,11 +116,11 @@ render_target_update_mode = 4
 [node name="AdaptToPaletteSprite2D" type="Sprite2D" parent="AdaptToPaletteSubViewportContainer/AdaptToPaletteSubViewport"]
 texture_filter = 1
 texture_repeat = 1
-texture = ExtResource("10_0n0tu")
+texture = ExtResource("9_t7qau")
 centered = false
 
 [node name="PaletteLoaderColorRect" type="ColorRect" parent="AdaptToPaletteSubViewportContainer/AdaptToPaletteSubViewport"]
-material = ExtResource("7_qc3m8")
+material = ExtResource("10_gpa0o")
 offset_right = 480.0
 offset_bottom = 640.0
 
@@ -139,7 +139,7 @@ render_target_update_mode = 4
 [node name="ResultSprite2D" type="Sprite2D" parent="ResultSubViewportContainer/ResultSubViewport"]
 texture_filter = 1
 texture_repeat = 1
-texture = ExtResource("9_hrhyv")
+texture = ExtResource("11_k5j45")
 centered = false
 
 [node name="Labels" type="Node" parent="."]

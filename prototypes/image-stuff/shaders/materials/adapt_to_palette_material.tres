@@ -1,8 +1,8 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bwiddjg0i8bph"]
 
 [ext_resource type="Shader" path="res://shaders/adapt_to_palette.gdshader" id="1_28xpn"]
-[ext_resource type="Texture2D" uid="uid://dj7itrta76io4" path="res://palettes/color-graphics-adapter-1x.png" id="2_pk1wo"]
+[ext_resource type="Texture2D" uid="uid://ho6cjy3shdhj" path="res://palettes/ega.png" id="2_ddu8n"]
 
 [resource]
 shader = ExtResource("1_28xpn")
-shader_parameter/palette = ExtResource("2_pk1wo")
+shader_parameter/palette = ExtResource("2_ddu8n")
