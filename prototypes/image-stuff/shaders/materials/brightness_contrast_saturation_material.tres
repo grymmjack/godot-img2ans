@@ -1,14 +1,14 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ccxbfxcfyvuh6"]
 
-[ext_resource type="Shader" path="res://shaders/color_brightness_saturation.gdshader" id="1_of6ag"]
+[ext_resource type="Shader" path="res://shaders/brightness_contrast_saturation.gdshader" id="1_cy73n"]
 
 [resource]
-shader = ExtResource("1_of6ag")
-shader_parameter/brightness = 0.242
-shader_parameter/contrast = 2.155
-shader_parameter/saturation = 1.0
+shader = ExtResource("1_cy73n")
+shader_parameter/brightness = 0.0590001
+shader_parameter/contrast = 2.365
+shader_parameter/saturation = 1.573
 shader_parameter/redVal = 1.0
 shader_parameter/greenVal = 1.0
 shader_parameter/blueVal = 1.0
-shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_color = Color(0.333333, 1, 0.333333, 1)
 shader_parameter/tint_effect_factor = 0.0

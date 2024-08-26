@@ -1,9 +1,12 @@
+// https://godotshaders.com/shader/colored-dithering/
+// by: jonwarlickmedia
+
 shader_type canvas_item;
 
-uniform int levels : hint_range(1, 32);
+uniform int levels : hint_range(0, 32);
 uniform float threshold : hint_range(0.0, 1.0);
-uniform int colors : hint_range(1, 32);
-uniform int pixelate : hint_range(1, 16);
+uniform int colors : hint_range(0, 16);
+uniform float pixelate : hint_range(1.0, 16.0);
 uniform sampler2D dither_texture : filter_nearest;
 
 float dither(float raw, float dither, int depth) {

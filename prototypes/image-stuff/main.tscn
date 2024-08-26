@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cm8nw07ayypq" path="res://shaders/viewport_textures/original_viewport_texture.tres" id="3_8qqyw"]
 [ext_resource type="Material" uid="uid://yxrwo0hrmgs5" path="res://shaders/materials/posterize_material.tres" id="4_ww6ys"]
 [ext_resource type="Texture2D" uid="uid://dehwfuabpb0a7" path="res://shaders/viewport_textures/brightness_contrast_saturation_viewport_texture.tres" id="5_h5w6l"]
-[ext_resource type="Texture2D" uid="uid://da88ewhbuucww" path="res://shaders/viewport_textures/posterize_image_viewport_texture.tres" id="6_r01kv"]
+[ext_resource type="Texture2D" uid="uid://da88ewhbuucww" path="res://shaders/viewport_textures/posterize_viewport_texture.tres" id="6_r01kv"]
 [ext_resource type="Material" uid="uid://bwiddjg0i8bph" path="res://shaders/materials/adapt_to_palette_material.tres" id="7_qc3m8"]
-[ext_resource type="Material" uid="uid://cgg1totp645tc" path="res://shaders/materials/8x8dither_material.tres" id="8_nigti"]
+[ext_resource type="Material" uid="uid://cgg1totp645tc" path="res://shaders/materials/retro_material.tres" id="8_nigti"]
 [ext_resource type="Texture2D" uid="uid://0s23bx68vvaa" path="res://shaders/viewport_textures/adapt_to_palette_viewport_texture.tres" id="9_hrhyv"]
-[ext_resource type="Texture2D" uid="uid://ds6f8cn5qldjt" path="res://shaders/viewport_textures/retro_post_processing_viewport_texture.tres" id="10_0n0tu"]
+[ext_resource type="Texture2D" uid="uid://ds6f8cn5qldjt" path="res://shaders/viewport_textures/retro_viewport_texture.tres" id="10_0n0tu"]
 
 [node name="Main" type="Node2D"]
 

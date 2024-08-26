@@ -1,3 +1,6 @@
+// https://godotshaders.com/shader/adapt-to-palette/
+// by: ALT_OhDude
+
 //	Godot 4 Adapt To Palette Shader
 shader_type canvas_item;
 
