@@ -13,6 +13,10 @@ After struggling a bit with the [QB64PE](https://www.qb64phoenix.com/) GUI side 
 Anyway, let's see where we can go with this!
 
 We are going to build this GUI in Godot img2ans:
+Here is the Godot WIP GUI:
+![image](https://github.com/user-attachments/assets/904fdd6f-c5c2-4a75-862a-8780f73e8318)
+
+Here is the original mockup:
 ![image](https://github.com/user-attachments/assets/05da2bb5-939d-40bf-8394-bb82cd3bccb9)
 
 Or try to :)
