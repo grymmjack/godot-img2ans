@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://ncehrk3rv2be"]
+[gd_scene load_steps=13 format=3 uid="uid://ncehrk3rv2be"]
 
+[ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/scroll_zoom_view.gd" id="1_51eyr"]
 [ext_resource type="Texture2D" uid="uid://ckgope7pull20" path="res://images/daemon.png" id="1_on4rl"]
 [ext_resource type="Material" uid="uid://ccxbfxcfyvuh6" path="res://shaders/materials/brightness_contrast_saturation_material.tres" id="2_joenb"]
 [ext_resource type="Material" uid="uid://dmm80sp24knd2" path="res://shaders/materials/sharpen_material.tres" id="2_q0oj6"]
@@ -24,7 +25,12 @@ handle_input_locally = false
 size = Vector2i(480, 640)
 render_target_update_mode = 4
 
-[node name="OriginalSprite2D" type="Sprite2D" parent="OriginalSubViewportContainer/OriginalSubViewport"]
+[node name="ScrollZoomView" type="MarginContainer" parent="OriginalSubViewportContainer/OriginalSubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_51eyr")
+
+[node name="OriginalSprite2D" type="Sprite2D" parent="OriginalSubViewportContainer/OriginalSubViewport/ScrollZoomView"]
 texture = ExtResource("1_on4rl")
 centered = false
 region_rect = Rect2(16, 0, 16, 0)

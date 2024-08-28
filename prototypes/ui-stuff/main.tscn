@@ -1,0 +1,755 @@
+[gd_scene load_steps=6 format=3 uid="uid://1jqouilworct"]
+
+[ext_resource type="Texture2D" uid="uid://dnvenxp67exby" path="res://mockup.png" id="1_e8hj8"]
+[ext_resource type="Texture2D" uid="uid://050i8dljy0j2" path="res://hamburger-amiga.png" id="2_kobjp"]
+[ext_resource type="Texture2D" uid="uid://bb1nlkcpc7bwe" path="res://color-graphics-adapter-1x.png" id="2_v76fk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_injis"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.466667, 0.466667, 0.466667, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkm16"]
+bg_color = Color(0.466667, 0.466667, 0.466667, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_vertical_guides_ = [288.0, 576.0, 864.0, 0.0, 1152.0, 228.0]
+metadata/_edit_horizontal_guides_ = [0.0, 648.0, 96.0, 288.0, 446.0, 566.0, 55.0, 608.0]
+metadata/_edit_lock_ = true
+
+[node name="Mockup" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.196078)
+clip_contents = true
+layout_mode = 0
+offset_right = 1310.0
+offset_bottom = 704.0
+scale = Vector2(0.878, 0.863)
+texture = ExtResource("1_e8hj8")
+metadata/_edit_lock_ = true
+
+[node name="Panels" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Root" type="Panel" parent="Panels"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="Header" type="Panel" parent="Panels"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 55.0
+metadata/_edit_lock_ = true
+
+[node name="Sauce" type="Panel" parent="Panels"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 446.0
+offset_right = 718.0
+offset_bottom = 565.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_injis")
+metadata/_edit_lock_ = true
+
+[node name="Colors" type="Panel" parent="Panels"]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 446.0
+offset_right = 850.0
+offset_bottom = 565.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_injis")
+metadata/_edit_lock_ = true
+
+[node name="Labels" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 35.0
+offset_right = 149.0
+offset_bottom = 66.0
+metadata/_edit_lock_ = true
+
+[node name="Header" type="Control" parent="Labels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="IMG2ANS" type="Label" parent="Labels/Header"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -22.0
+offset_right = 79.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 20
+text = "IMG2ANS"
+metadata/_edit_lock_ = true
+
+[node name="Version" type="Label" parent="Labels/Header"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = -20.0
+offset_right = 157.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 10
+text = "V0.2"
+metadata/_edit_lock_ = true
+
+[node name="Source Image" type="Label" parent="Labels/Header"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 33.0
+offset_right = 87.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 11
+text = "SOURCE IMAGE"
+metadata/_edit_lock_ = true
+
+[node name="Destination Palette" type="Label" parent="Labels/Header"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 33.0
+offset_right = 447.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 11
+text = "DESTINATION PALETTE"
+metadata/_edit_lock_ = true
+
+[node name="Resize Crop" type="Label" parent="Labels/Header"]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 33.0
+offset_right = 732.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 11
+text = "RESIZE / CROP"
+metadata/_edit_lock_ = true
+
+[node name="Preview" type="Label" parent="Labels/Header"]
+layout_mode = 0
+offset_left = 861.0
+offset_top = 33.0
+offset_right = 982.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 11
+text = "PREVIEW"
+metadata/_edit_lock_ = true
+
+[node name="Code Idea By" type="Label" parent="Labels/Header"]
+layout_mode = 0
+offset_left = 986.0
+offset_top = -30.0
+offset_right = 1128.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 9
+text = "CODE / IDEA BY :
+Rick Christy (grymmjack)
+https://youtube.com/grymmjack
+"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Source Image" type="Control" parent="Labels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Brightness" type="Label" parent="Labels/Source Image"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 266.0
+offset_right = 87.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "BRIGHTNESS"
+metadata/_edit_lock_ = true
+
+[node name="Contrast" type="Label" parent="Labels/Source Image"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 287.0
+offset_right = 87.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "CONTRAST"
+metadata/_edit_lock_ = true
+
+[node name="Saturation" type="Label" parent="Labels/Source Image"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 309.0
+offset_right = 87.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "SATURATION"
+metadata/_edit_lock_ = true
+
+[node name="Tint" type="Label" parent="Labels/Source Image"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 330.0
+offset_right = 87.0
+offset_bottom = 353.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "TINT"
+metadata/_edit_lock_ = true
+
+[node name="Pixelate" type="Label" parent="Labels/Source Image"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 351.0
+offset_right = 87.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "PIXELATE"
+metadata/_edit_lock_ = true
+
+[node name="Posterize" type="Label" parent="Labels/Source Image"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 374.0
+offset_right = 87.0
+offset_bottom = 397.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "POSTERIZE"
+metadata/_edit_lock_ = true
+
+[node name="Resize Crop" type="Control" parent="Labels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Width" type="Label" parent="Labels/Resize Crop"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 266.0
+offset_right = 658.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "WIDTH"
+metadata/_edit_lock_ = true
+
+[node name="Height" type="Label" parent="Labels/Resize Crop"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 287.0
+offset_right = 658.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "HEIGHT
+"
+metadata/_edit_lock_ = true
+
+[node name="Zoom" type="Label" parent="Labels/Resize Crop"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 319.0
+offset_right = 658.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "ZOOM
+"
+metadata/_edit_lock_ = true
+
+[node name="X" type="Label" parent="Labels/Resize Crop"]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 266.0
+offset_right = 700.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "X"
+metadata/_edit_lock_ = true
+
+[node name="Y" type="Label" parent="Labels/Resize Crop"]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 289.0
+offset_right = 700.0
+offset_bottom = 312.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 11
+text = "Y"
+metadata/_edit_lock_ = true
+
+[node name="Sauce" type="Control" parent="Labels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Sauce Panel Header" type="Label" parent="Labels/Sauce"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 402.0
+offset_right = 59.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_wkm16")
+text = "SAUCE"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Colors" type="Control" parent="Labels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Colors Panel Header" type="Label" parent="Labels/Colors"]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 402.0
+offset_right = 787.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_wkm16")
+text = "COLORS"
+horizontal_alignment = 1
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Header" type="Control" parent="Buttons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Browse" type="Button" parent="Buttons/Header"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 65.0
+offset_right = 201.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 10
+text = "BROWSE"
+metadata/_edit_lock_ = true
+
+[node name="Clear" type="Button" parent="Buttons/Header"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 65.0
+offset_right = 280.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 10
+text = "CLEAR"
+metadata/_edit_lock_ = true
+
+[node name="Destination Palette" type="Control" parent="Buttons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Browse" type="Button" parent="Buttons/Destination Palette"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 301.0
+offset_right = 559.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 10
+text = "BROWSE"
+metadata/_edit_lock_ = true
+
+[node name="Resize Crop" type="Control" parent="Buttons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="80 x 25" type="Button" parent="Buttons/Resize Crop"]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 301.0
+offset_right = 850.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 10
+text = "80 x 25
+"
+metadata/_edit_lock_ = true
+
+[node name="80 x 50" type="Button" parent="Buttons/Resize Crop"]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 326.0
+offset_right = 850.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 10
+text = "80 x 50
+"
+metadata/_edit_lock_ = true
+
+[node name="132 x 100" type="Button" parent="Buttons/Resize Crop"]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 351.0
+offset_right = 850.0
+offset_bottom = 373.0
+theme_override_font_sizes/font_size = 10
+text = "132 x 100"
+metadata/_edit_lock_ = true
+
+[node name="Checkboxes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Header" type="Control" parent="Checkboxes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Destination Palette" type="CheckButton" parent="Checkboxes/Header"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 64.0
+offset_right = 336.0
+offset_bottom = 88.0
+metadata/_edit_lock_ = true
+
+[node name="Resize Crop" type="CheckButton" parent="Checkboxes/Header"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 64.0
+offset_right = 621.0
+offset_bottom = 88.0
+metadata/_edit_lock_ = true
+
+[node name="Images" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 56.0
+offset_bottom = 136.0
+metadata/_edit_lock_ = true
+
+[node name="Source Image" type="TextureRect" parent="Images"]
+clip_contents = true
+layout_mode = 0
+offset_right = 265.0
+offset_bottom = 190.0
+texture = ExtResource("2_kobjp")
+expand_mode = 2
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Palette Image" type="TextureRect" parent="Images"]
+clip_contents = true
+layout_mode = 0
+offset_left = 285.0
+offset_right = 550.0
+offset_bottom = 190.0
+texture = ExtResource("2_kobjp")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Resize Image" type="TextureRect" parent="Images"]
+clip_contents = true
+layout_mode = 0
+offset_left = 570.0
+offset_right = 835.0
+offset_bottom = 190.0
+texture = ExtResource("2_kobjp")
+expand_mode = 1
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Preview Image" type="TextureRect" parent="Images"]
+clip_contents = true
+layout_mode = 0
+offset_left = 854.0
+offset_right = 1121.0
+offset_bottom = 469.0
+texture = ExtResource("2_kobjp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Palette Swatch" type="TextureRect" parent="Images"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 285.0
+offset_top = 255.0
+offset_right = 543.0
+offset_bottom = 277.0
+texture = ExtResource("2_v76fk")
+metadata/_edit_lock_ = true
+
+[node name="Sliders" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Brightness" type="HSlider" parent="Sliders"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 301.0
+offset_right = 228.0
+offset_bottom = 317.0
+metadata/_edit_lock_ = true
+
+[node name="Contrast" type="HSlider" parent="Sliders"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 322.0
+offset_right = 228.0
+offset_bottom = 338.0
+metadata/_edit_lock_ = true
+
+[node name="Saturation" type="HSlider" parent="Sliders"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 344.0
+offset_right = 228.0
+offset_bottom = 360.0
+metadata/_edit_lock_ = true
+
+[node name="Tint" type="HSlider" parent="Sliders"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 365.0
+offset_right = 228.0
+offset_bottom = 381.0
+metadata/_edit_lock_ = true
+
+[node name="Pixelate" type="HSlider" parent="Sliders"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 386.0
+offset_right = 228.0
+offset_bottom = 402.0
+metadata/_edit_lock_ = true
+
+[node name="Posterize" type="HSlider" parent="Sliders"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 409.0
+offset_right = 228.0
+offset_bottom = 425.0
+metadata/_edit_lock_ = true
+
+[node name="Zoom" type="HSlider" parent="Sliders"]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 354.0
+offset_right = 752.0
+offset_bottom = 370.0
+metadata/_edit_lock_ = true
+
+[node name="Colors" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Colors"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 365.0
+offset_right = 107.0
+offset_bottom = 381.0
+metadata/_edit_lock_ = true
+
+[node name="Spinboxes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Brightness" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 301.0
+offset_right = 322.062
+offset_bottom = 332.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Contrast" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 322.0
+offset_right = 322.062
+offset_bottom = 353.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Saturation" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 344.0
+offset_right = 322.062
+offset_bottom = 375.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Tint" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 365.0
+offset_right = 322.062
+offset_bottom = 396.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Pixelate" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 386.0
+offset_right = 322.062
+offset_bottom = 417.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Posterize" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 409.0
+offset_right = 322.062
+offset_bottom = 440.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Width" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 301.0
+offset_right = 719.062
+offset_bottom = 332.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Height" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 322.0
+offset_right = 719.062
+offset_bottom = 353.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="X" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 301.0
+offset_right = 801.062
+offset_bottom = 332.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Y" type="SpinBox" parent="Spinboxes"]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 322.0
+offset_right = 801.062
+offset_bottom = 353.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Option Buttons (DDs)" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Palette" type="OptionButton" parent="Option Buttons (DDs)"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 301.0
+offset_right = 476.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 10
+toggle_mode = false
+keep_pressed_outside = true
+selected = 0
+item_count = 1
+popup/item_0/text = "EGA (16)"
+metadata/_edit_lock_ = true
+
+[node name="Text Boxes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Sauce Title" type="TextEdit" parent="Text Boxes"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 461.0
+offset_right = 273.0
+offset_bottom = 487.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "TITLE"
+scroll_fit_content_height = true
+metadata/_edit_lock_ = true
+
+[node name="Sauce Author" type="TextEdit" parent="Text Boxes"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 493.0
+offset_right = 273.0
+offset_bottom = 519.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "AUTHOR"
+scroll_fit_content_height = true
+metadata/_edit_lock_ = true
+
+[node name="Sauce Group" type="TextEdit" parent="Text Boxes"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 525.0
+offset_right = 273.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "GROUP"
+scroll_fit_content_height = true
+metadata/_edit_lock_ = true
+
+[node name="Sauce Comment" type="TextEdit" parent="Text Boxes"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 461.0
+offset_right = 559.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "COMMENT"
+scroll_fit_content_height = true
+metadata/_edit_lock_ = true
