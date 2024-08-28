@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://1jqouilworct"]
+[gd_scene load_steps=9 format=3 uid="uid://1jqouilworct"]
 
 [ext_resource type="Texture2D" uid="uid://dnvenxp67exby" path="res://mockup.png" id="1_e8hj8"]
 [ext_resource type="Texture2D" uid="uid://050i8dljy0j2" path="res://hamburger-amiga.png" id="2_kobjp"]
@@ -25,6 +25,10 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_v8kvm"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_wq4wx"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_8rfrl"]
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -32,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_vertical_guides_ = [288.0, 576.0, 864.0, 0.0, 1152.0, 228.0]
+metadata/_edit_vertical_guides_ = [288.0, 576.0, 864.0, 0.0, 1152.0, 228.0, 587.0]
 metadata/_edit_horizontal_guides_ = [0.0, 648.0, 96.0, 288.0, 446.0, 566.0, 55.0, 608.0]
 metadata/_edit_lock_ = true
 
@@ -46,6 +50,7 @@ offset_right = 1310.0
 offset_bottom = 744.0
 scale = Vector2(0.878, 0.863)
 texture = ExtResource("1_e8hj8")
+metadata/_edit_lock_ = true
 
 [node name="Panels" type="Control" parent="."]
 anchors_preset = 0
@@ -372,6 +377,22 @@ text = "COLORS"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="Export" type="Control" parent="Labels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Save As" type="Label" parent="Labels/Export"]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 565.0
+offset_right = 705.0
+offset_bottom = 581.0
+theme_override_font_sizes/font_size = 11
+text = "AS FILE"
+metadata/_edit_lock_ = true
+
 [node name="Buttons" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -456,6 +477,38 @@ offset_right = 850.0
 offset_bottom = 373.0
 theme_override_font_sizes/font_size = 10
 text = "132 x 100"
+metadata/_edit_lock_ = true
+
+[node name="Export Directory" type="Control" parent="Buttons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Browse" type="Button" parent="Buttons/Export Directory"]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 595.0
+offset_right = 657.0
+offset_bottom = 621.0
+theme_override_font_sizes/font_size = 10
+text = "BROWSE"
+metadata/_edit_lock_ = true
+
+[node name="Export" type="Control" parent="Buttons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Export Button" type="Button" parent="Buttons/Export"]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 580.0
+offset_right = 1137.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 20
+text = "EXPORT"
 metadata/_edit_lock_ = true
 
 [node name="Checkboxes" type="Control" parent="."]
@@ -803,6 +856,28 @@ placeholder_text = "COMMENT"
 scroll_fit_content_height = true
 metadata/_edit_lock_ = true
 
+[node name="Export Directory" type="TextEdit" parent="Text Boxes"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 595.0
+offset_right = 580.0
+offset_bottom = 621.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "/home/grymmjack/img2ans/resources/..."
+scroll_fit_content_height = true
+metadata/_edit_lock_ = true
+
+[node name="Export Filename" type="TextEdit" parent="Text Boxes"]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 594.0
+offset_right = 851.0
+offset_bottom = 620.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "hamburger-image.png.ans"
+scroll_fit_content_height = true
+metadata/_edit_lock_ = true
+
 [node name="Radio Buttons" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -861,7 +936,7 @@ offset_top = 461.0
 offset_right = 696.0
 offset_bottom = 485.0
 theme_override_font_sizes/font_size = 11
-button_group = SubResource("ButtonGroup_v8kvm")
+button_group = SubResource("ButtonGroup_wq4wx")
 text = "8 PX FONT"
 metadata/_edit_lock_ = true
 
@@ -872,6 +947,34 @@ offset_top = 485.0
 offset_right = 696.0
 offset_bottom = 509.0
 theme_override_font_sizes/font_size = 11
-button_group = SubResource("ButtonGroup_v8kvm")
+button_group = SubResource("ButtonGroup_wq4wx")
 text = "16 PX FONT"
+metadata/_edit_lock_ = true
+
+[node name="Export" type="Control" parent="Radio Buttons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Image Source Directory" type="CheckBox" parent="Radio Buttons/Export"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 597.0
+offset_right = 273.0
+offset_bottom = 621.0
+theme_override_font_sizes/font_size = 11
+button_group = SubResource("ButtonGroup_8rfrl")
+text = "EXPORT TO SOURCE DIRECTORY"
+metadata/_edit_lock_ = true
+
+[node name="Directory" type="CheckBox" parent="Radio Buttons/Export"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 597.0
+offset_right = 476.0
+offset_bottom = 621.0
+theme_override_font_sizes/font_size = 11
+button_group = SubResource("ButtonGroup_8rfrl")
+text = "EXPORT TO DIRECTORY"
 metadata/_edit_lock_ = true
