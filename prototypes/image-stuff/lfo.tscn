@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpjfbu1cy0pj2"]
+
+[ext_resource type="Script" path="res://lfo.gd" id="1_tlvjd"]
+[ext_resource type="Texture2D" uid="uid://3356v75ffirv" path="res://lfo-icon.svg" id="2_kep8l"]
+[ext_resource type="Script" path="res://lfo_icon.gd" id="3_8w5ct"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LFO Icon" type="Sprite2D" parent="."]
+position = Vector2(-180.228, -173.257)
+texture = ExtResource("2_kep8l")
+script = ExtResource("3_8w5ct")
+
+[node name="LFO" type="Node" parent="LFO Icon"]
+script = ExtResource("1_tlvjd")
+frequency = 5.0
