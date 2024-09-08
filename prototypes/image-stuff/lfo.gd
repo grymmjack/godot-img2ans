@@ -13,7 +13,8 @@ enum WAVEFORM { SINE, TRIANGLE, SQUARE, SAW_UP, SAW_DOWN, NOISE }
 
 var rng:RandomNumberGenerator = RandomNumberGenerator.new()
 
-var value:float
+var _time:float
+static var _time_cycle:float
 
 func _init() -> void:
 	print("LFO Constructor")
@@ -27,11 +28,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	value = (Time.get_ticks_msec() + delta) * 0.0001
-	oscillate.emit(oscillator(value))
+	_time += (120.0 / 60.0)
+	print(_time/_time*delta)
+	print(signf(_time/_time*delta))
+	oscillate.emit(oscillator(lerp(0.0, _time/4.0, 0.1)))
 
 
-func oscillator(value:float) -> float:
+func oscillator(_time:float) -> float:
 	match waveform:
 		WAVEFORM.SINE:
 			return sine()
@@ -46,30 +49,30 @@ func oscillator(value:float) -> float:
 		WAVEFORM.NOISE:
 			return fmod(frequency/100, noise())
 		_:
-			return value
+			return _time
 	
 
 func sine() -> float:
-	return float(sin(2 * PI * frequency * value))
+	return float(sin(2 * PI * frequency * _time))
 
 
 func triangle() -> float:
-	return float(2 * abs(2*((value * frequency) - int(value * frequency + 0.5))) - 1)
+	return float(2 * abs(2*((_time * frequency) - int(_time * frequency + 0.5))) - 1)
 
 
 func square() -> float:
-	if (value * frequency - int(value * frequency)) < 0.5:
+	if (_time * frequency - int(_time * frequency)) < 0.5:
 		return float(1.0)
 	else:
 		return float(-1.0)
 
 
 func saw_up() -> float:
-	return float(2 * ((value * frequency) - int(value * frequency)) - 1)
+	return float(2 * ((_time * frequency) - int(_time * frequency)) - 1)
 
 
 func saw_down() -> float:
-	return float(1 - 2 * ((value * frequency) - int(value * frequency)))
+	return float(1 - 2 * ((_time * frequency) - int(_time * frequency)))
 
 
 func noise() -> float:

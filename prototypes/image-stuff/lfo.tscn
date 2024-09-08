@@ -7,10 +7,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="LFO Icon" type="Sprite2D" parent="."]
-position = Vector2(-180.228, -173.257)
+position = Vector2(247.388, -40.0553)
 texture = ExtResource("2_kep8l")
 script = ExtResource("3_8w5ct")
 
 [node name="LFO" type="Node" parent="LFO Icon"]
 script = ExtResource("1_tlvjd")
-frequency = 5.0
+frequency = 0.01

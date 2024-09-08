@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 
 func _on_lfo_oscillate(value: float) -> void:
 	print("on LFO: " + str(value))
-	position.x = cos(PI*value) * 250
-	position.y = sin(PI*value) * 250
+	#position.x = cos(PI*value) * 250
+	position.y = value * 100
